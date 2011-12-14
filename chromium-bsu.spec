@@ -1,6 +1,6 @@
 Name:		chromium-bsu
 Version:	0.9.15
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary:	Fast paced, arcade-style, top-scrolling space shooter
 Group:		Games/Arcade
 License:	Artistic clarified
@@ -19,7 +19,7 @@ BuildRequires:	quesoglc-devel
 BuildRequires:	openal-devel
 BuildRequires:	freealut-devel
 BuildRequires:	imagemagick
-Obsoletes:	chromium <= %{version}
+%rename		chromium
 
 %description
 You are captain of the cargo ship Chromium B.S.U., responsible for delivering
