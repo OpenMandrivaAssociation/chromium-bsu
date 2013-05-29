@@ -1,23 +1,23 @@
-Name:		chromium-bsu
-Version:	0.9.15
-Release:	3
 Summary:	Fast paced, arcade-style, top-scrolling space shooter
+Name:		chromium-bsu
+Version:	0.9.15.1
+Release:	1
 Group:		Games/Arcade
 License:	Artistic clarified
-URL:		http://chromium-bsu.sourceforge.net/
+Url:		http://chromium-bsu.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-Patch0:		chromium-bsu-0.9.15-sformat.patch
-BuildRequires:	pkgconfig(glu)
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(alsa)
-BuildRequires:	pkgconfig(vorbis)
-BuildRequires:	pkgconfig(SDL_image)
-BuildRequires:	pkgconfig(libpng)
-BuildRequires:	pkgconfig(quesoglc)
-BuildRequires:	pkgconfig(openal)
-BuildRequires:	pkgconfig(freealut)
-BuildRequires:	libglpng-devel
 BuildRequires:	imagemagick
+BuildRequires:	libglpng-devel
+BuildRequires:	pkgconfig(alsa)
+BuildRequires:	pkgconfig(freealut)
+BuildRequires:	pkgconfig(gl)
+BuildRequires:	pkgconfig(glu)
+BuildRequires:	pkgconfig(libpng)
+BuildRequires:	pkgconfig(openal)
+BuildRequires:	pkgconfig(quesoglc)
+BuildRequires:	pkgconfig(sdl)
+BuildRequires:	pkgconfig(SDL_image)
+BuildRequires:	pkgconfig(vorbis)
 Obsoletes:	chromium < 0.9.15-3
 
 %description
@@ -30,10 +30,11 @@ This is an OpenGL-based shoot 'em up game with fine graphics.
 
 %prep
 %setup -q
-%patch0 -p1 -b .fmt
 
 %build
-%configure2_5x --bindir=%{_gamesbindir} --datadir=%{_gamesdatadir}
+%configure2_5x \
+	--bindir=%{_gamesbindir} \
+	--datadir=%{_gamesdatadir}
 %make
 
 %install
@@ -51,17 +52,7 @@ convert -scale 16x16 misc/%{name}.png %{buildroot}%{_iconsdir}/hicolor/16x16/app
 %doc AUTHORS COPYING NEWS README ChangeLog
 %{_gamesbindir}/%{name}
 %{_gamesdatadir}/%{name}
-%{_datadir}/pixmaps/*.png
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_mandir}/man6/%{name}.6.*
-
-%changelog
-* Wed Dec 14 2011 Andrey Bondrov <abondrov@mandriva.org> 0.9.15-2mdv2011.0
-+ Revision: 740877
-- Use ImageMagick for icons, obsolete chromium
-
-* Tue Dec 13 2011 Andrey Bondrov <abondrov@mandriva.org> 0.9.15-1
-+ Revision: 740681
-- imported package chromium-bsu
 
