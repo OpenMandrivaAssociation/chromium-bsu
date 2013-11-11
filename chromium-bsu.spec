@@ -1,7 +1,7 @@
 Summary:	Fast paced, arcade-style, top-scrolling space shooter
 Name:		chromium-bsu
 Version:	0.9.15.1
-Release:	1
+Release:	2
 Group:		Games/Arcade
 License:	Artistic clarified
 Url:		http://chromium-bsu.sourceforge.net/
