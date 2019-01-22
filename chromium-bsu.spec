@@ -5,7 +5,8 @@ Release:	2
 Group:		Games/Arcade
 License:	Artistic clarified
 Url:		http://chromium-bsu.sourceforge.net/
-Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+#Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
+Source0:	%{name}-%{version}.tar.gz
 BuildRequires:	imagemagick
 BuildRequires:	libglpng-devel
 BuildRequires:	pkgconfig(alsa)
