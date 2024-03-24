@@ -30,16 +30,16 @@ vessel.
 This is an OpenGL-based shoot 'em up game with fine graphics.
 
 %prep
-%setup -q
+%autosetup -p1
 
 %build
-%configure2_5x \
+%configure \
 	--bindir=%{_gamesbindir} \
 	--datadir=%{_gamesdatadir}
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 mkdir -p %{buildroot}%{_iconsdir}/hicolor/{16x16,32x32,48x48,64x64}/apps
 install -m0644 misc/%{name}.png %{buildroot}%{_iconsdir}/hicolor/64x64/apps/%{name}.png
