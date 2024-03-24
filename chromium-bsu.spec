@@ -56,4 +56,5 @@ convert -scale 16x16 misc/%{name}.png %{buildroot}%{_iconsdir}/hicolor/16x16/app
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
 %{_mandir}/man6/%{name}.6.*
-
+%{_docdir}/%{name}/*.html
+%{_docdir}/%{name}/images
